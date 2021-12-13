@@ -1,20 +1,27 @@
 <!doctype html>
 <html>
-<head>
+  <head>
 	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Raj Sri Shanker AR Business Card</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-	<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+	<meta name="apple-mobile-web-app-capable" content="yes"> <!--Need this for IOS-->
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> <!--Need this for Android-->
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+	<script src="script.js"></script>
+  </head>
 
-</head>
-<body>
-	<a-scene vr-mode-ui="enabled:false;" arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-		<a-nft type="nft" url="assets/nft/pinball">
-			<a-box scale="100 100 100" color="#FFF" ></a-box>
-        </a-nft>
-	</a-scene>
-</body>
+  <body>
+    <a-scene mindar-image="imageTargetSrc:targets.mind" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
+		<a-assets>
+			<img id="rajimage" src="assets/circlerajimage.png">
+			<img id="rajandname" src="assets/rajimagename.png">
+			<video id="arvideo" autoplay muted webkit-playsinline artoolkit loop="true" src="assets/arvideo.mp4"></video>
+		</a-assets>
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+		  <a-image src="#rajandname" height="1" width="2"></a-image>
+		  <a-video src="#arvideo" height="1" width="2" position="0 -1.1 0" material geometry></a-video>
+      </a-entity>
+    </a-scene>
+  </body>
 </html>
