@@ -2,25 +2,37 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<meta name="apple-mobile-web-app-capable" content="yes"> <!--Need this for IOS-->
+	<meta name="apple-mobile-web-app-capable" content="yes"> <!--Need this for iOS-->
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> <!--Need this for Android-->
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
-	<script src="script.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
+    <script src="script.js"></script>
   </head>
 
   <body>
     <a-scene mindar-image="imageTargetSrc:targets.mind" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
 		<a-assets>
 			<img id="rajimage" src="assets/circlerajimage.png">
-			<img id="rajandname" src="assets/rajimagename.png">
+			<img id="rajandnameimage" src="assets/rajimagename.png">
+      <img id="facebook" src="assets/facebook_white.png">
+      <img id="twitter" src="assets/twitter_white.png">
+      <img id="linkedin" src="assets/linkedin_white.png">
+      <img id="instagram" src="assets/instagram_white.png">
+      <img id="playimage" src="assets/play_white.png">
 			<video id="arvideo" autoplay muted webkit-playsinline artoolkit loop="true" src="assets/arvideo.mp4"></video>
 		</a-assets>
-      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
-      <a-entity mindar-image-target="targetIndex: 0">
-		  <a-image src="#rajandname" height="1" width="2"></a-image>
-		  <a-video src="#arvideo" height="1" width="2" position="0 -1.1 0" material geometry></a-video>
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000;objects: .clickable"></a-camera>
+      <a-entity id="marker-target" mindar-image-target="targetIndex: 0">
+		  <a-image src="#rajandnameimage" height="1" width="2"></a-image>
+      <a-image src="#linkedin" height="0.4" width="0.4" position="1.3 0.1 0"></a-image>
+      <a-image src="#instagram" height="0.4" width="0.4" position="1.3 -0.4 0"></a-image>
+      <a-image src="#twitter" height="0.4" width="0.4" position="1.3 -0.9 0"></a-image>
+      <a-image src="#facebook" height="0.4" width="0.4" position="1.3 -1.4 0"></a-image>
+      <a-plane id="arvideo-object" src="#arvideo" height="1" width="2" position="0 -1.1 -0.1"></a-plane>
+      <a-image id="playbutton-object" class="clickable" src="#playimage" height="0.5" width="0.5" position="0 -1.05 0"></a-image>
       </a-entity>
     </a-scene>
   </body>
