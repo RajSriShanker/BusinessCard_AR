@@ -1,30 +1,20 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Raj Sri Shanker AR Business Card</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+	<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
 
 </head>
 <body>
-	<a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-        <a-assets>
-            <img id="rajandname" src="assets/imagename.png">
-            <img id="websiteimage" src="assets/websiteimage.png">
-            <img id="linkedinimage" src="assets/linkedinimage.png">
-        </a-assets>
-		<a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
-		<a-entity mindar-image-target="targetIndex: 0">
-            <a-image src="#rajandname" opacity="0.9" position="0 0 0" width="2" height="1" rotation="0 0 0" animation="property: position;to: 2 0 0;dur: 2000; easing: linear;"></a-image>
-            <a-image src="#websiteimage" timeout="2000" opacity="0.9" position="2 0 0" width="1" height="0.5" rotation="0 0 0" visible="false" animation="property: position;to: 2 -1 0;dur: 2000; easing: linear;" animation__2="property: visible; to: true;"></a-image>
-            <a-image src="#linkedinimage" timeout="2000" opacity="0.9" position="2 0 0" width="1" height="0.5" rotation="0 0 0" visible="false" animation="property: position;to: 2 -2 0;dur: 2000; easing: linear;" animation__2="property: visible; to: true;"></a-image>
-		</a-entity>
-	  </a-scene>
-
+	<a-scene vr-mode-ui="enabled:false;" arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+		<a-nft type="nft" url="assets/nft/pinball">
+			<a-box scale="100 100 100" color="#FFF" ></a-box>
+        </a-nft>
+	</a-scene>
 </body>
 </html>
