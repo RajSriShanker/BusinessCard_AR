@@ -4,24 +4,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const playButton = document.querySelector('#playbutton-object');
     const videoObject = document.querySelector('#arvideo');
 
+    //Video Function
     playButton.addEventListener('click', function () {
       if (videoObject.paused == true) {
         videoObject.play();
-        } else {
-        videoObject.pause();    }
-    }, false);
-
-    //Play Button
-    playButton.addEventListener("click", event =>{
-      if(playButton.object3D.visible == true)
-      {
         playButton.setAttribute('visible',false);
-
-      }
-      else
-      {
+        } else {
+        videoObject.pause();    
         playButton.setAttribute('visible',true);
       }
-    },false);
+    }, false);
 
+
+    
   });
