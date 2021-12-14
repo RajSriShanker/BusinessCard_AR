@@ -38,19 +38,19 @@ document.addEventListener("DOMContentLoaded", function() {
       });
 
       linkedinObject.addEventListener('click', function(){
-        window.open('https://www.linkedin.com/in/raj-sri-shanker-867b379b/');
+        window.location.href = 'https://www.linkedin.com/in/raj-sri-shanker-867b379b/'
       });
 
       twitterObject.addEventListener('click', function(){
-        window.open('https://twitter.com/RajSriShanker');
+        window.location.href = 'https://twitter.com/RajSriShanker'
       });
 
       githubObject.addEventListener('click', function(){
-        window.open('https://github.com/RajSriShanker');
+        window.location.href = 'https://github.com/RajSriShanker'
       });
 
       instagramObject.addEventListener('click', function(){
-        window.open('https://www.instagram.com/rajonthestreet/?hl=en');
+        window.location.href = 'https://www.instagram.com/rajonthestreet/?hl=en'
       });
 
   });
