@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const twitterObject = document.querySelector('#twitter-object')
     const githubObject = document.querySelector('#github-object')
     const instagramObject = document.querySelector('#instagram-object')
-
+    const rajimageObject = document.querySelector('#rajimage-object')
 
     //Video Function
     playButton.addEventListener('click', function () {
@@ -21,10 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
      // detect target found
      targetMarker.addEventListener("targetFound", event => {
-      linkedinObject.setAttribute('animation','property: position; to: 1.5 0.1 0');
-      twitterObject.setAttribute('animation','property: position; to: 1.5 -0.5 0');
-      githubObject.setAttribute('animation','property: position; to: 1.5 -1.1 0');
-      instagramObject.setAttribute('animation','property: position; to: 1.5 -1.7 0');
+      linkedinObject.setAttribute('animation','property: position; to: 1.5 0.6 0');
+      twitterObject.setAttribute('animation','property: position; to: 1.5 0 0');
+      githubObject.setAttribute('animation','property: position; to: 1.5 -0.6 0');
+      instagramObject.setAttribute('animation','property: position; to: 1.5 -1.2 0');
+      rajimageObject.setAttribute('animation','property: position; to: 0 1 0')
     });
 
       // detect target lost
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         twitterObject.setAttribute('animation','property: position; to: 0 0 0');
         githubObject.setAttribute('animation','property: position; to: 0 0 0');
         instagramObject.setAttribute('animation','property: position; to: 0 0 0');
+        rajimageObject.setAttribute('animation','property: position; to: 0 0 0')
         playButton.setAttribute('visible',true);
         videoObject.pause();
       });
