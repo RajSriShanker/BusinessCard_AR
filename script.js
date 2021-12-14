@@ -55,5 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = 'https://www.instagram.com/rajonthestreet/?hl=en'
       });
 
+      rajimageObject.addEventListener('click', function(){
+        window.location.href = 'https://rajsrishanker.com/'
+      });
   });
 
