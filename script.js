@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const targetMarker = document.querySelector('#marker-target')
     const playButton = document.querySelector('#playbutton-object');
     const videoObject = document.querySelector('#arvideo');
+    const videoHolder = document.querySelector('#arvideo-object');
     const linkedinObject = document.querySelector('#linkedin-object')
     const twitterObject = document.querySelector('#twitter-object')
     const githubObject = document.querySelector('#github-object')
@@ -19,22 +20,41 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }, false);
 
+    if(videoObject.pause)
+    {
+      playButton.setAttribute('visible',true);
+    }
+    else
+    {
+      playButton.setAttribute('visible',false);
+    }
+
      // detect target found
      targetMarker.addEventListener("targetFound", event => {
       linkedinObject.setAttribute('animation','property: position; to: 1.5 0.6 0');
+      linkedinObject.setAttribute('animation__opacity','property: material.opacity; to: 1');
       twitterObject.setAttribute('animation','property: position; to: 1.5 0 0');
+      twitterObject.setAttribute('animation__opacity','property: material.opacity; to: 1');
       githubObject.setAttribute('animation','property: position; to: 1.5 -0.6 0');
+      githubObject.setAttribute('animation__opacity','property: material.opacity; to: 1');
       instagramObject.setAttribute('animation','property: position; to: 1.5 -1.2 0');
-      rajimageObject.setAttribute('animation','property: position; to: 0 1 0')
+      instagramObject.setAttribute('animation__opacity','property: material.opacity; to: 1');
+
+
+
+      setTimeout(() => {
+        rajimageObject.setAttribute("visible", true);
+        rajimageObject.setAttribute('animation__opacity','property: opacity; to: 1');
+        rajimageObject.setAttribute('animation','property: position; to: 0 1 0')
+      }, 600);
+
+      videoHolder.setAttribute('animation','property: position; to: 0 -1.1 -0.1');
+      playButton.setAttribute('animation','property: position; to: 0 -1.05 0');
+
     });
 
       // detect target lost
       targetMarker.addEventListener("targetLost", event => {
-        linkedinObject.setAttribute('animation','property: position; to: 0 0 0');
-        twitterObject.setAttribute('animation','property: position; to: 0 0 0');
-        githubObject.setAttribute('animation','property: position; to: 0 0 0');
-        instagramObject.setAttribute('animation','property: position; to: 0 0 0');
-        rajimageObject.setAttribute('animation','property: position; to: 0 0 0')
         playButton.setAttribute('visible',true);
         videoObject.pause();
       });
@@ -58,5 +78,6 @@ document.addEventListener("DOMContentLoaded", function() {
       rajimageObject.addEventListener('click', function(){
         window.location.href = 'https://rajsrishanker.com/'
       });
+
   });
 
