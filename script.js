@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function() {
       setTimeout(() => {
         rajimageObject.setAttribute("visible", true);
         rajimageObject.setAttribute('animation__opacity','property: opacity; to: 1');
-        rajimageObject.setAttribute('animation','property: position; to: 0 1 0')
+        rajimageObject.setAttribute('animation','property: position; to: 0 0.5 0')
       }, 600);
 
-      videoHolder.setAttribute('animation','property: position; to: 0 -1.1 -0.1');
-      playButton.setAttribute('animation','property: position; to: 0 -1.05 0');
+      videoHolder.setAttribute('animation','property: position; to: 0 -1 0');
+      playButton.setAttribute('animation','property: position; to: 0 -1 0.1');
 
     });
 
