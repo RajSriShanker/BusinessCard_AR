@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const githubObject = document.querySelector('#github-object')
     const instagramObject = document.querySelector('#instagram-object')
     const rajimageObject = document.querySelector('#rajimage-object')
+    const rajtextObject = document.querySelector('#rajtext-object')
 
     //Video Function
     playButton.addEventListener('click', function () {
@@ -31,6 +32,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
      // detect target found
      targetMarker.addEventListener("targetFound", event => {
+
+      rajimageObject.setAttribute('animation__opacity','property: opacity; to: 1');
+
+      setTimeout(() => {
+        rajimageObject.setAttribute('animation','property: position; to: 0 1 0')
+        rajimageObject.setAttribute('animation__scale','property: scale; to: 0.5 0.5 0.5')
+      }, 1000);
+
+      setTimeout(() => {
       linkedinObject.setAttribute('animation','property: position; to: 1.5 0.6 0');
       linkedinObject.setAttribute('animation__opacity','property: material.opacity; to: 1');
       twitterObject.setAttribute('animation','property: position; to: 1.5 0 0');
@@ -39,17 +49,17 @@ document.addEventListener("DOMContentLoaded", function() {
       githubObject.setAttribute('animation__opacity','property: material.opacity; to: 1');
       instagramObject.setAttribute('animation','property: position; to: 1.5 -1.2 0');
       instagramObject.setAttribute('animation__opacity','property: material.opacity; to: 1');
-
-
+      }, 1600);
 
       setTimeout(() => {
-        rajimageObject.setAttribute("visible", true);
-        rajimageObject.setAttribute('animation__opacity','property: opacity; to: 1');
-        rajimageObject.setAttribute('animation','property: position; to: 0 0.5 0')
-      }, 600);
-
-      videoHolder.setAttribute('animation','property: position; to: 0 -1 0');
-      playButton.setAttribute('animation','property: position; to: 0 -1 0.1');
+        videoHolder.setAttribute('animation','property: position; to: 0 -1 0');
+        videoHolder.setAttribute('animation__opacity','property: material.opacity; to: 1');
+        playButton.setAttribute('animation','property: position; to: 0 -1 0.1');
+        playButton.setAttribute('animation__opacity','property: opacity; to: 1');
+        rajimageObject.setAttribute('animation__lastmove','property: position; to: -0.5 1 0')
+        rajtextObject.setAttribute('animation__opacity','property: opacity; to: 1');
+        rajtextObject.setAttribute('animation','property: position; to: 0.5 1 0')
+      }, 2000);
 
     });
 
