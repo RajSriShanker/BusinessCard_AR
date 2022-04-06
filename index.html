@@ -10,6 +10,8 @@
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+  <script src="https://unpkg.com/aframe-text-geometry-component/dist/aframe-text-geometry-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/IdeaSpaceVR/aframe-particle-system-component@master/dist/aframe-particle-system-component.min.js"></script>
   <script src="script.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -27,6 +29,7 @@
   <div id="textbox-overlay">
     <div>
       <!--Text Goes Here-->
+      <b>Thank you for viewing my Business Card hope to hear from you soon!</b>
     </div>
   </div>
 
@@ -34,46 +37,32 @@
     vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
     <!--Asset Management-->
     <a-assets>
-      <img id="rajandnameimage" src="assets/circlerajimage.png">
-      <img id="rajtextimage" src="assets/rajtext.png">
+      <img id="faceimage" src="assets/circlerajimage2.png">
       <img id="twitter" src="assets/twitter_white_inside.png">
       <img id="linkedin" src="assets/linkedin_white_inside.png">
       <img id="github" src="assets/github_white_inside.png">
       <img id="instagram" src="assets/instagram_white_inside.png">
-      <img id="playimage" src="assets/play_white.png">
-      <video id="arvideo" autoplay muted webkit-playsinline artoolkit loop="true" src="assets/arvideo.mp4"></video>
+      <a-asset-item id="avatarModel" src="assets/scene.gltf"></a-asset-item>
     </a-assets>
     <!--Camera-->
     <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;"
       raycaster="far: 10000;objects: .clickable"></a-camera>
     <!--Main Scene Area-->
     <a-entity id="marker-target" mindar-image-target="targetIndex: 0">
+      <!--Place Objects Here-->
+      <a-image id="faceimage-object" class="clickable" src="#faceimage" height="1" width="1"></a-image>
+      <a-entity id="nametext-object" text-geometry="value: Raj Sri Shanker; size: 0.2" position="-0.3 1.2 0" material="opacity:0"></a-entity>
 
-      <a-image id="rajimage-object" class="clickable" src="#rajandnameimage" height="1" width="1" opacity="0"></a-image>
-      <a-image id="rajtext-object" class="clickable" src="#rajtextimage" height="0.5" width="1" position="0 1 0"
-        opacity="0"></a-image>
-      <a-image id="linkedin-object" class="clickable" src="#linkedin" height="0.4" width="0.4" position="4 0.6 0"
-        material="opacity: 0"
-        animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
-      </a-image>
-      <a-image id="twitter-object" class="clickable" src="#twitter" height="0.4" width="0.4" position="4 0 0"
-        material="opacity: 0"
-        animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
-      </a-image>
-      <a-image id="github-object" class="clickable" src="#github" height="0.4" width="0.4" position="4 -0.6 0"
-        material="opacity: 0"
-        animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
-      </a-image>
-      <a-image id="instagram-object" class="clickable" src="#instagram" height="0.4" width="0.4" position="4 -1.2 0"
-        material="opacity: 0"
-        animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
-      </a-image>
+      <a-image id="linkedin-object" class="clickable" src="#linkedin" height="0.5" width="0.5" position="-1 -1 0" material="opacity:0"></a-image>
+      <a-image id="twitter-object" class="clickable" src="#twitter" height="0.4" width="0.4" position="-0.3 -1 0" material="opacity:0"></a-image>  
+      <a-image id="github-object" class="clickable" src="#github" height="0.4" width="0.4" position="0.3 -1 0" material="opacity:0"></a-image>  
+      <a-image id="instagram-object" class="clickable" src="#instagram" height="0.4" width="0.4" position="1 -1 0" material="opacity:0"></a-image>
 
-      <a-plane id="arvideo-object" src="#arvideo" height="1" width="2" position="0 -2 0" material="opacity: 0">
-      </a-plane>
-      <a-image id="playbutton-object" class="clickable" src="#playimage" height="0.5" width="0.5" position="0 -2 0.1"
-        opacity="0"></a-image>
+      <a-gltf-model id="gltf-object" class="clickable" rotation="0 90 90" position="-0.1 -0.65 10" scale="0.07 0.07 0.07" src="#avatarModel"></a-gltf-model>
     </a-entity>
+
+    <a-entity id="particle-object" position="0 2.25 -15" animation="property: visible; to: false" particle-system="preset: snow ;color:#f7e920;texture: ./assets/mapleleaf.png;size: 5"></a-entity>
+
   </a-scene>
 </body>
 

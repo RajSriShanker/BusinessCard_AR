@@ -1,0 +1,11 @@
+Model Information:
+* title:	CN Tower Scan - Toronto
+* source:	https://sketchfab.com/3d-models/cn-tower-scan-toronto-1f105541bda242bcb8c00ac9a71bdfd9
+* author:	fatcatzzzzz (https://sketchfab.com/fatcatzzzzz)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "CN Tower Scan - Toronto" (https://sketchfab.com/3d-models/cn-tower-scan-toronto-1f105541bda242bcb8c00ac9a71bdfd9) by fatcatzzzzz (https://sketchfab.com/fatcatzzzzz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
