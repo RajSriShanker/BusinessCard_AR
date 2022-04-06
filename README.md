@@ -1,4 +1,4 @@
-# Raj Sri Shanker - AR Business Card
+# Raj Sri Shanker - Augmented Reality Business Card
 This is my AR business card made with MindAR
 # Executing 
 To view the AR business card please do the following 
